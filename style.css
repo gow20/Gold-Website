@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  color: #681016;
+}
+.container {
+  display: flex;
+  width: 100%;
+}
+.topbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-logos img {
+  height: 40px; /* Adjust this to match your logo asset heights */
+  object-fit: contain;
+}
+.menu-links {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Uniform empty spacing between each navbar module */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* --- Dropdown Layout --- */
+.drop-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.coin-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.drop-select {
+  border: none;
+  background: transparent;
+  color: #681016;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  padding-right: 5px;
+}
+
+/* --- Standard Icon Sizing --- */
+.home {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Simple link hover behavior */
+.help-link {
+  text-decoration: none;
+  color: #681016;
+  cursor: pointer;
+}
+
+.help-link:hover {
+  text-decoration: underline;
+}
+.secondbar {
+  position: sticky;
+  top: 0; /* Locks it dynamically to the very top edge */
+  z-index: 1000; /* Guarantees it stays floating over page body text */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  gap: 10px;
+}
+.secondbar img {
+  height: 55px; /* Adjust this to match your logo asset heights */
+  object-fit: contain;
+  background: white;
+}
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.logos img {
+  height: 40px;
+  object-fit: contain;
+}
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.delivery {
+  text-decoration: none;
+  color: #681016;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.quickdelivery {
+  text-decoration: none;
+  color: #681016;
+}
+.search {
+  border: none;
+  background-color: rgb(233, 231, 231);
+  text-align: center;
+  border-radius: 2px;
+  height: 20px;
+}
+/* Container background matching the image's light peach/pink tint */
+.nav-list-bar {
+  width: 100%;
+  background-color: #fff1f2; /* Light peach/pink background tint */
+  padding: 10px 40px;
+}
+
+/* Even left-to-right distribution */
+.nav-links-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+}
+
+/* Base style for regular navigation links */
+.nav-menu-item a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #681016; /* Your core maroon color */
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Special styling for the Purchase Plan pill-button */
+.nav-menu-item.plan-btn a {
+  padding: 8px 18px;
+  border-radius: 10px; /* Smooth rounded pill shape */
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.body {
+  background-color: #fcf3e8;
+  color: #681016;
+}
+.parent-box {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-left: -200px;
+  gap: 15px;
+}
+.first {
+  background-color: rgb(130, 185, 236);
+  color: blue;
+  padding: 2px 2px;
+  border-radius: 5px;
+}
+.second {
+  background-color: #d4476a;
+  padding: 2px 2px;
+  border-radius: 5px;
+}
+.third {
+  background-color: #f1d951;
+  color: orangered;
+  padding: 2px 2px;
+  border-radius: 5px;
+}
+
+/* 1. Main Parent Grid Setup */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Forms 3 columns per row */
+  gap: 40px; /* Spacing between all cards */
+  width: 100%;
+  padding: 30px;
+  background-color: #fbebed; /* Pale pink background from your reference */
+}
+
+/* 2. Individual Card Grouping */
+.info-card {
+  display: flex;
+  flex-direction: column; /* Forces price to stack directly beneath the image box */
+}
+
+/* 3. The White Image Frame Box */
+.card-image-box {
+  position: relative;
+  width: 90%;
+  aspect-ratio: 1 / 1; /* Keeps the container perfectly square */
+  background-color: #ffffff;
+  border-radius: 12px; /* Smooth rounded frame corners */
+  overflow: hidden;
+}
+
+/* 4. Layering the dual hover images inside the white box */
+.card-image-box img {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 70%;
+  height: 70%;
+  object-fit: contain; /* Keeps jewelry from stretching/distorting */
+  transition: opacity 0.3s ease;
+}
+
+.img-hover {
+  opacity: 0; /* Hides secondary image by default */
+}
+
+/* 5. Hover Engine Trigger State Change */
+.info-card:hover .img-default {
+  opacity: 0;
+}
+.info-card:hover .img-hover {
+  opacity: 1;
+}
+
+/* 6. Pricing Label Position Styling */
+.price-tag {
+  font-size: 18px;
+  font-weight: 700;
+  color: #681016; /* Maroon text color parameter */
+  margin-top: 12px;
+  text-align: left; /* Left aligns text directly beneath the card box edge */
+}
+/* 1. Make sure your hover images are hidden by default */
+/* .img-hover {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-default {
+  opacity: 1;
+}
+
+/* 2. THE FIX: When hovering over your exact ".card" class, swap the opacities */
+.card:hover .img-default {
+  opacity: 0; /* Fades out the front image */
+}
+
+.card:hover .img-hover {
+  opacity: 1;
+}
+.footer {
+  display: flex;
+  background-color: #ffb6c1;
+  border-radius: 15px;
+  color: #800020;
+  padding: 20px;
+  margin: 30px;
+}
+.center {
+  margin-left: 230px;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
